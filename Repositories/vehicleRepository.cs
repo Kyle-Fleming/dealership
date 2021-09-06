@@ -7,18 +7,18 @@ using Microsoft.EntityFrameworkCore;
 
 namespace dealership.Repositories
 {
-    public class vehicleRepository : IVehicleRepository
+    public class VehicleRepository : IVehicleRepository
     {
-        public readonly vehicleContext _context;
+        public readonly VehicleContext _context;
 
-        public vehicleRepository(vehicleContext context)
+        public VehicleRepository(VehicleContext context)
         {
             _context = context;
         }
 
-        public async Task<vehicle> Create(vehicle vehicle)
+        public async Task<Vehicle> Create(Vehicle vehicle)
         {
-            _context.vehicles.Add(vehicle);
+            _context.Vehicles.Add(vehicle);
             await _context.SaveChangesAsync();
             return vehicle;
         }
@@ -26,22 +26,22 @@ namespace dealership.Repositories
 
         public async Task Delete(int id)
         {
-            var vehicleToDelete = await _context.vehicles.FindAsync(id);
-            _context.vehicles.Remove(vehicleToDelete);
+            var vehicleToDelete = await _context.Vehicles.FindAsync(id);
+            _context.Vehicles.Remove(vehicleToDelete);
             await _context.SaveChangesAsync();
         }
 
-        public async Task<IEnumerable<vehicle>> Get()
+        public async Task<IEnumerable<Vehicle>> Get()
         {
-            return await _context.vehicles.ToListAsync();
+            return await _context.Vehicles.ToListAsync();
         }
 
-        public async Task<vehicle> Get(int id)
+        public async Task<Vehicle> Get(int id)
         {
-            return await _context.vehicles.FindAsync(id);
+            return await _context.Vehicles.FindAsync(id);
         }
 
-        public async Task Update(vehicle vehicle)
+        public async Task Update(Vehicle vehicle)
         {
             _context.Entry(vehicle).State = EntityState.Modified;
             await _context.SaveChangesAsync();

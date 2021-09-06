@@ -6,14 +6,14 @@ using Microsoft.EntityFrameworkCore;
 
 namespace WebApplication1.Models
 {
-    public class vehicleContext : DbContext
+    public class VehicleContext : DbContext
     {
-        public vehicleContext(DbContextOptions<vehicleContext> options)
+        public VehicleContext(DbContextOptions<VehicleContext> options)
             :base(options)
         {
             Database.EnsureCreated();
         }
 
-        public DbSet<vehicle> vehicles { get; set; }
+        public DbSet<Vehicle> Vehicles { get; set; }
     }
 }
