@@ -13,8 +13,9 @@ namespace dealership.Controllers
     public class VehiclesController : ControllerBase
     {
         private readonly IVehicleRepository _vehicleRepository;
+        private readonly IVehicleRepository vehicleRepository;
 
-        public VehiclesController(IVehicleRepository vehicleRepository)
+        public VehiclesController()
         {
             _vehicleRepository = vehicleRepository;
         }
