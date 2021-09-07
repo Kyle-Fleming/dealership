@@ -24,5 +24,6 @@ namespace dealership.Pages.cars
         {
             Vehicle = await _context.Vehicles.ToListAsync();
         }
+
     }
 }

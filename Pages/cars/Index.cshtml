@@ -2,10 +2,10 @@
 @model dealership.Pages.cars.IndexModel
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Models";
 }
 
-<h1>Index</h1>
+<h1>Models</h1>
 
 <p>
     <a asp-page="Create">Create New</a>
@@ -32,6 +32,7 @@
         </tr>
     </thead>
     <tbody>
+
 @foreach (var item in Model.Vehicle) {
         <tr>
             <td>
