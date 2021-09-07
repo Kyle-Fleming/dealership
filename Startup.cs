@@ -8,6 +8,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
 using WebApplication1.Models;
 
+
 namespace WebApplication1
 {
     public class Startup
@@ -22,10 +23,14 @@ namespace WebApplication1
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddScoped<IVehicleRepository, VehicleRepository>();            
+            services.AddScoped<IVehicleRepository, VehicleRepository>();
+            
             services.AddControllers();
 
             services.AddDbContext<VehicleContext>(o => o.UseSqlServer("Data Source=KyleDesktop;Initial Catalog=dealership;Integrated Security=True;Pooling=False"));
+           
+            
+            //testing http requests
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "dealership", Version = "v1" });
@@ -36,6 +41,7 @@ namespace WebApplication1
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+            //setup of swagger
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();

@@ -4,8 +4,6 @@ using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-
-
 namespace dealership.Controllers
 {
     [Route("api/[controller]")]
@@ -32,6 +30,13 @@ namespace dealership.Controllers
         public async Task<ActionResult<Vehicle>> Getvehicles(int id)
         {
             return await _vehicleRepository.Get(id);
+        }
+
+        [HttpGet("{Category}")]
+        public async Task<ActionResult<Vehicle>> GetCategory(string category)
+        {
+            return await _vehicleRepository.Get(category);
+
         }
 
         [HttpPost]
@@ -64,6 +69,8 @@ namespace dealership.Controllers
             await _vehicleRepository.Delete(vehicleToDelete.ID);
             return NoContent();
         }
+
+
 
 
     }

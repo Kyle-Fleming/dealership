@@ -19,11 +19,16 @@ namespace dealership.Pages.cars
         }
 
         public IList<Vehicle> Vehicle { get;set; }
-
+        
         public async Task OnGetAsync()
         {
             Vehicle = await _context.Vehicles.ToListAsync();
         }
+        /*
+        public async Task OnGetAsync()
+        {
+            Vehicle = await _context.Vehicles.ToListAsync();
+        }*/
 
     }
 }

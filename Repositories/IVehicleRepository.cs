@@ -12,6 +12,7 @@ namespace dealership.Repositories
 
         Task<IEnumerable<Vehicle>> Get();
         Task<Vehicle> Get(int ID);
+        Task<Vehicle> Get(string Category);
         Task<Vehicle> Create(Vehicle vehicle);
         Task Update(Vehicle vehicle);
         Task Delete(int id);
