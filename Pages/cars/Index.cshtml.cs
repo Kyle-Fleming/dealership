@@ -12,16 +12,28 @@ namespace dealership.Pages.cars
     public class IndexModel : PageModel
     {
         private readonly WebApplication1.Models.VehicleContext _context;
-
+        
         public IndexModel(WebApplication1.Models.VehicleContext context)
         {
             _context = context;
         }
 
         public IList<Vehicle> Vehicle { get;set; }
-        
+        public string category { get; set; }
+
+
         public async Task OnGetAsync()
         {
+            IQueryable<string> CategoryQeuery = from cat in _context.Vehicles
+                                                orderby cat.Category
+                                                select cat.Category;
+            /*
+            if (!string.IsNullOrEmpty(category))
+            {
+                Vehicle = await Vehicle.Where(x => x.Category == category);
+
+            }*/
+
             Vehicle = await _context.Vehicles.ToListAsync();
         }
         /*

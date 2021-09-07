@@ -40,6 +40,11 @@ namespace dealership.Repositories
         {
             return await _context.Vehicles.FindAsync(id);
         }
+        public async Task<Vehicle> Get(string Category)
+        {
+            return await _context.Vehicles.FindAsync(Category);
+        }
+
 
         public async Task Update(Vehicle vehicle)
         {

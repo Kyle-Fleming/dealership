@@ -8,7 +8,7 @@
 <h1>Models</h1>
 
 <p>
-    <a asp-page="Create">Create New</a>
+    <a asp-page="Create" class="btn btn-primary">Create New</a>
 </p>
 
 
@@ -22,7 +22,7 @@ Accordionsetup
     <!--Hatchback accordion-->
     <div class="accordion-item">
         <h2 class="accordion-header" id="flush-Hatchbacks">
-            <button class="accordion-button collapsed"
+            <button class="btn btn-light"
                     type="button" data-toggle="collapse"
                     data-target="#flush-collapseOne"
                     aria-expanded="false"
@@ -35,7 +35,7 @@ Accordionsetup
              aria-labelledby="flush-Hatchbacks"
              data-parent="#accordionVehicle">
             <div class="accordion-body">
-                <table class="table" id="vehicletable">
+                <table class="table" id="HatchbackTable">
                     <thead>
                         <tr>
                             <th>
@@ -89,7 +89,7 @@ Accordionsetup
     <!--Suv accordion-->
     <div class="accordion-item">
         <h2 class="accordion-header" id="flush-SUV">
-            <button class="accordion-button collapsed"
+            <button class="btn btn-light"
                     type="button"
                     data-toggle="collapse"
                     data-target="#flush-collapseTwo"
@@ -100,7 +100,7 @@ Accordionsetup
         </h2>
         <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-SUV" data-parent="#accordionVehicle">
             <div class="accordion-body">
-                <table class="table" id="vehicletable">
+                <table class="table" id="SUVTable">
                     <thead>
                         <tr>
                             <th>
@@ -154,7 +154,7 @@ Accordionsetup
     <!--Bakkie accordion-->
     <div class="accordion-item">
         <h2 class="accordion-header" id="flush-Bakkie">
-            <button class="accordion-button collapsed"
+            <button class="btn btn-light"
                     type="button"
                     data-toggle="collapse"
                     data-target="#flush-collapseThree"
@@ -168,7 +168,7 @@ Accordionsetup
             <div class="accordion-body">
                 Placeholder content for this accordion.
 
-                <table class="table" id="vehicletable">
+                <table class="table" id="BakkieTable">
                     <thead>
                         <tr>
                             <th>
@@ -223,7 +223,7 @@ Accordionsetup
 
     <div class="accordion-item">
         <h2 class="accordion-header" id="flush-Vans">
-            <button class="accordion-button collapsed"
+            <button class="btn btn-light"
                     type="button"
                     data-toggle="collapse"
                     data-target="#flush-collapseFour"
@@ -235,7 +235,7 @@ Accordionsetup
 
         <div id="flush-collapseFour" class="accordion-collapse collapse" aria-labelledby="flush-Vans" data-parent="#accordionVehicle">
             <div class="accordion-body">
-                <table class="table" id="vehicletable">
+                <table class="table" id="VanTable">
                     <thead>
                         <tr>
                             <th>
@@ -288,7 +288,7 @@ Accordionsetup
 
     <div class="accordion-item">
         <h2 class="accordion-header" id="flush-Sedan">
-            <button class="accordion-button collapsed"
+            <button class="btn btn-light"
                     type="button"
                     data-toggle="collapse"
                     data-target="#flush-collapseFive"
@@ -300,7 +300,7 @@ Accordionsetup
 
         <div id="flush-collapseFive" class="accordion-collapse collapse" aria-labelledby="flush-Sedan" data-parent="#accordionVehicle">
             <div class="accordion-body">
-                <table class="table" id="vehicletable">
+                <table class="table" id="SedanTable">
                     <thead>
                         <tr>
                             <th>
@@ -353,7 +353,7 @@ Accordionsetup
 
     <div class="accordion-item">
         <h2 class="accordion-header" id="flush-Commercial">
-            <button class="accordion-button collapsed"
+            <button class="btn btn-light"
                     type="button"
                     data-toggle="collapse"
                     data-target="#flush-collapseSix"
@@ -365,14 +365,11 @@ Accordionsetup
 
         <div id="flush-collapseSix" class="accordion-collapse collapse" aria-labelledby="flush-Commercial" data-parent="#accordionVehicle">
             <div class="accordion-body">
-                <table class="table" id="vehicletable">
+                <table class="table" id="CommercialTable">
                     <thead>
                         <tr>
                             <th>
                                 @Html.DisplayNameFor(model => model.Vehicle[0].Name)
-                            </th>
-                            <th>
-                                @Html.DisplayNameFor(model => model.Vehicle[0].Category)
                             </th>
                             <th>
                                 @Html.DisplayNameFor(model => model.Vehicle[0].Price)
@@ -393,9 +390,6 @@ Accordionsetup
                             <tr>
                                 <td>
                                     @Html.DisplayFor(modelItem => item.Name)
-                                </td>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.Category)
                                 </td>
                                 <td>
                                     @Html.DisplayFor(modelItem => item.Price)

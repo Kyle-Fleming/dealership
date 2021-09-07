@@ -15,5 +15,6 @@ namespace WebApplication1.Models
         }
 
         public DbSet<Vehicle> Vehicles { get; set; }
+
     }
 }
